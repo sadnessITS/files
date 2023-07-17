@@ -1,0 +1,42 @@
+Сервис должен работать на порту 8443. Разварачивается в Jboss 7.1 и выше.
+Все тэги обязятельны для заполнения, при отсуствии тэга или пустом значении в нем в ответ возвращать ошибку с именем тэга.
+Дополнительная проверка для тэге PNameID = RcvIban0 , в тэге PValue значение должно наичнаться на KZ
+
+<?xml version="1.0" encoding="UTF-8"?> 
+<GCSvc version="1"> 
+   <Payment> 
+      <AnsAuthPay> 
+         <AdditionInfo> 
+            <PNameID>RcvFio0</PNameID> 
+            <PValue>Иванов|Иван|Иванович</PValue> 
+         </AdditionInfo> 
+         <AdditionInfo> 
+            <PNameID>RcvAddress0</PNameID> 
+            <PValue>KGS, Бишкек, Панфилова, 110 </PValue> 
+         </AdditionInfo> 
+         <!-- счет IBAN --> 
+         <AdditionInfo> 
+            <PNameID>RcvIban0</PNameID> 
+            <PValue>KZ563190000012344567</PValue> 
+         </AdditionInfo> 
+         <AdditionInfo> 
+            <PNameID>Cur0</PNameID> 
+            <PValue>417</PValue> 
+         </AdditionInfo> 
+      </AnsAuthPay> 
+   </Payment> 
+</GCSvc> 
+
+Ответ в случае ошибки в зависимости от ошибки изменяется тэг MSG:
+<?xml version="1.0" encoding="UTF-8"?> 
+<Response>
+  <Error>1</Error>
+  <MSG>fields loan_id is empty</MSG>
+</Response>
+
+Ответ без ошибки:
+<?xml version="1.0" encoding="UTF-8"?> 
+<Response>
+  <Error>0</Error>
+  <MSG>OK</MSG>
+</Response>
