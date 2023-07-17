@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gs="http://spring.io/guides/gs-producing-web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:getPaymentRequest>
+         <gs:Payment>
+            <gs:AnsAuthPay>
+               <gs:AdditionInfo>
+                  <gs:PNameID>RcvFio0</gs:PNameID>
+                  <gs:PValue>Иванов|Иван|Иванович</gs:PValue>
+               </gs:AdditionInfo>
+               <gs:AdditionInfo>
+                  <gs:PNameID>RcvAddress0</gs:PNameID>
+                  <gs:PValue>KGS, Бишкек, Панфилова, 110 </gs:PValue>
+               </gs:AdditionInfo>
+               <gs:AdditionInfo>
+                  <gs:PNameID>RcvIban0</gs:PNameID>
+                  <gs:PValue>KZ563190000012344567</gs:PValue>
+               </gs:AdditionInfo>
+               <gs:AdditionInfo>
+                  <gs:PNameID>Cur0</gs:PNameID>
+                  <gs:PValue>417</gs:PValue>
+               </gs:AdditionInfo>
+            </gs:AnsAuthPay>
+         </gs:Payment>
+      </gs:getPaymentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
